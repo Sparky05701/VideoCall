@@ -1,0 +1,164 @@
+<!Doctype>
+<html>
+<head>
+<title>Ashare</title>
+<script>
+// webrtc_pollyfill.js
+var webrtc_cable = true;
+var rtc_peer_connection = null;
+var rtc_session_description = null;
+var get_user_media = null;
+var connect_stream_to_scr = null;
+var stun_server = "stun.1.google.com:19302";
+
+rtc_peer_connection
+mozRTCPeerConnection
+webkitRTCPeer Connection
+
+rtc_session_description
+
+get_user_media
+
+connect_stream_to_scr
+stun_server
+
+navigator.getUser
+navigator.mozGetUserMedia
+navigator.webkitGetUserMedia
+
+connect_stream_to_scr = function(media,stream,media_elements) {
+ media_element.srcObject =media_stream;
+ media_element.play();
+ 
+connect_stream_to_src =function(media_stream, media_element) {
+ media_element.mozSrcObject = media_stream;
+ media_element.play;
+ };
+ 
+ connect_stream_to_scr = function(media_stream, media_element) {
+  media_element.src = webkitUrl(media_stream);
+  };
+  
+</script>
+<script>
+// basic_video_call.js
+
+var call_token; // unique token for this call
+var signaling_server; // signaling server for this call
+var peer_connection; // peerconnection object
+
+function start()
+
+// create the peer connection object
+peer_connection = new rtc_peer_connection ({
+	"iceservers": [
+	{ "url" : "stun:"+stun_server }, //stun server info
+	]
+});
+
+// generic handler that sends any ice canidates to the other peer
+peer_connection.onicecandidate = function (event) {
+...
+};
+// display remote video streams when arrive
+peer_ connection.onstream = function (event) {
+...
+};
+// setup generic connection to the signaling server using the Websocket API
+signal_server = new Websocket("ws:// localhost:1234");
+
+location.hash
+  if(document.location.hash === ""
+  || document.locatio.hash === undefined) { // y are the Cellar 
+  ...
+  { else { //you have a hash fragment so you must be the Callee
+  ...
+  }
+ }
+ 
+ // handler to process new descriptions
+ function new_descriptions_created(descriptions) {
+ ...
+ }
+ 
+ // handle signal as a caller
+ function caller_signal_handler(event) {
+ var signal = JSON.parse(event.data);
+ if (signal.type === "callee arrived") {
+ ...
+ } else if (signal.type === "new_ice_candidate") {
+ ...
+ } else if (signal.type === "new _description") {
+ ...
+ }else {
+ // extend with your own signal types here
+ }
+}
+// setup stream from the local camera
+function setup_video() {
+  get_user_media{
+  {
+   "audio": true, // request access to local microphone
+   "video": true // request access to local camera
+   },
+   function (local_stream) { // sucess callback
+   ...
+   },
+   log_error (error) {
+   ...
+   }
+  }
+  
+  // generic error handler
+  function log_error(error) {
+  ...
+  }
+  </script>
+  <style>
+  html, body {
+   padding: 0px;
+   margin: 0px;
+   font-family: "Arial", "Helvetica", "san-serif";
+   }
+   #loading_state {
+    position: absolute;
+	top: 45%;
+	left: 0px;
+	width: 100%;
+	font-size:20px;
+	text-align: center;
+	}
+   #open_call_state {
+	 display: none;
+   }
+   #local_video {
+    position: absolute;
+	top: 10px;
+	left: 10px;
+	width:  160px;
+	height: 120px;
+	background: #333333;
+   }
+   #remote_video
+    position: absolute;
+	top 0px;
+	left 0px;
+	width: 1024px;
+	height: 768px;
+	background: 999999;
+	}
+	</style>
+	<body onload = "start()">
+	<div id="loading_state">
+	loading...
+	</div>
+	 <video id="open_call_state">
+	 <video id="remote_video"></video>
+	 <video id="local_video"></video>
+	</div>
+	</body>
+	</html>
+	
+   
+
+
